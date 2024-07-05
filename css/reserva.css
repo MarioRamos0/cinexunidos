@@ -1,0 +1,10 @@
+.rooms {
+    display: column;
+    width: 100%;
+}
+
+.room {
+    width: 60%;
+    background-color: white;
+    box-shadow: 
+}
