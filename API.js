@@ -154,11 +154,13 @@ function mostrarAsientos(dato, cineId, auditorioId) {
             seatDiv.style.backgroundColor =
               colorMap[seatValue] || "transparent";
             console.log("Asiento deseleccionado:", seatId);
+             eliminarReservacionAsiento(ruta, seatId);
           }
         });
       }
       if (seatsData[row][i] === 1) {
         seatDiv.classList.add("occupied");
+       
       }
 
       // Asigna el ID al asiento (por ejemplo, "H5")
@@ -185,6 +187,28 @@ function reservarAsiento(ruta, seatId) {
   console.log("Ruta de reserva:", ruta);
   fetch(ruta, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      seat: seatId, // Asegúrate de usar "seat" en lugar de "seatId"
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Respuesta de la API:", data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+
+function eliminarReservacionAsiento(ruta, seatId) {
+  ruta += `/reserve`;
+  console.log("Ruta se quito reservacion:", ruta);
+  fetch(ruta, {
+    method: "DELETE",
     headers: {
       "Content-Type": "application/json",
     },
