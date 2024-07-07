@@ -1,3 +1,4 @@
+/*
 const contenedor = document.querySelector(".container");
 const asientos = document.querySelectorAll(".row .seat:not(.occupied)");
 const contador = document.getElementById("count");
@@ -76,4 +77,4 @@ contenedor.addEventListener("click", (e) => {
 
 // Inicializar contador y total
 actualizarContadorSeleccionados();
-  
+  */

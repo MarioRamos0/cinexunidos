@@ -115,3 +115,34 @@ p.text {
 p.text span {
   color: #6feaf6;
 }
+
+
+.secciones-entradas-api {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: 0.3s;
+  position: fixed;
+  border-radius: 10px;
+  top: 5%;
+  left: 5%;
+  height: 90%;
+  width: 90%;
+  z-index: 10;
+  outline: 9999px solid rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.secciones-entradas-api h2 {
+  font-size: var(--size-h3);
+}
+
+.secciones-entradas-api h3 {
+  font-size: 1.5em;
+}
+
+.secciones-entradas-api.activa {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
