@@ -145,6 +145,7 @@ function mostrarAsientos(dato, cineId, auditorioId) {
             asientosSeleccionados.push(seatId);
             seatDiv.style.backgroundColor = "green";
             console.log("Asiento seleccionado:", seatId);
+            verficacionReservacionAsiento(ruta);
             reservarAsiento(ruta,seatId);
           } else {
             asientosSeleccionados.splice(
@@ -163,7 +164,7 @@ function mostrarAsientos(dato, cineId, auditorioId) {
        
       }
 
-      // Asigna el ID al asiento (por ejemplo, "H5")
+      // Asignamos el ID al asiento (por ejemplo, "H5")
       seatDiv.id = `Seat:${row}${i + 1}`;
 
       rowDiv.appendChild(seatDiv);
@@ -191,7 +192,7 @@ function reservarAsiento(ruta, seatId) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      seat: seatId, // Asegúrate de usar "seat" en lugar de "seatId"
+      seat: seatId, 
     }),
   })
     .then((response) => response.json())
@@ -213,8 +214,26 @@ function eliminarReservacionAsiento(ruta, seatId) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      seat: seatId, // Asegúrate de usar "seat" en lugar de "seatId"
+      seat: seatId, 
     }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Respuesta de la API:", data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+function verficacionReservacionAsiento(ruta) {
+  ruta += `/reservation-updates`;
+  console.log("Ruta de revisar reservacion:", ruta);
+  fetch(ruta, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
   })
     .then((response) => response.json())
     .then((data) => {
