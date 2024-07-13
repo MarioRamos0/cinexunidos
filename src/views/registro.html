@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chat personal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/registro.css">
+</head>
+
+<body>
+
+  <main class="register_box">
+    <img src="https://cinexunidos-production.up.railway.app/assets/images/cinex-unidos.png" alt="Logo cinex unidos" id="logo_cinex" class="logo_cinex">
+        <h1 class="h1_cinex">asistente cinex</h2>
+        <p  class="h3_cinex">En que podemos ayudarte</p>
+        <form method="post">
+            <section class="input_box">
+                <label for="usernameInput" class="label_cinex">tu nombre de usuario <span> = </span></label>
+                <input type="text" id="usernameInput" name="username" class="input_cinex">        
+                <button type="button" id="ingresar" class="btn_cinex">Entrar</button>
+            </section>
+
+        </form>
+    </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/registro.js"></script>
+
+
+  
+</body>
+
+</html>
