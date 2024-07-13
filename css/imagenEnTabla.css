@@ -1,0 +1,21 @@
+.tabla-fila-imagen {
+    text-align: center;
+    padding: 10px;
+    max-width: 400px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: 200ms;
+}
+
+.tabla-fila-imagen:hover {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    translate: 0px -5px;
+}
+
+.tabla-fila-imagen img {
+    max-width: 100%;
+    aspect-ratio: 1.5;
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
