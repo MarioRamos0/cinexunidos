@@ -14,8 +14,4 @@ router.get("/registro", (req, res) => {
   res.sendFile(path.join(views, "registro.html"));
 });
 
-router.get("/reserva", (req, res) => {
-  res.sendFile(path.join(views, "reserva.html"));
-});
-
 module.exports = router;

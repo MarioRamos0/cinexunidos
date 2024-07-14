@@ -3,9 +3,6 @@ const { createServer } = require("http");
 const servidorTiempoReal = require("./servidorTiempoReal");
 const path = require("path");
 
-
-
-
 const app = express();
 const httpServer = createServer(app);
 
@@ -23,4 +20,4 @@ httpServer.listen(app.get("port"), () => {
 });
 
 // Inicializar el servidor de tiempo real
-servidorTiempoReal(httpServer); 
+servidorTiempoReal(httpServer);
